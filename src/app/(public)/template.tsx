@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-type Props = { children: React.ReactNode }
+type Props = { children: React.ReactNode };
 
 export default function template({ children }: Props) {
   return (
     <>
-      <main className=''>{children}</main>
+      <main className="">{children}</main>
     </>
-  )
+  );
 }
