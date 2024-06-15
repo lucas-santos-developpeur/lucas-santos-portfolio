@@ -4,8 +4,8 @@ import AnimateSection from "../animations/AnimateSection";
 
 export default function AboutSection() {
   return (
-    <AnimateSection>
-      <section id="about" className="section py-20 bg-gray-50">
+    <AnimateSection sectionId="about">
+      <div className="section py-20 bg-gray-50">
         <div className="mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-50">
@@ -57,7 +57,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </AnimateSection>
   );
 }

@@ -10,11 +10,15 @@ import {
 interface IGlobalContextValues {
   isTransparentHeader: boolean;
   setIsTransparentHeader: Dispatch<SetStateAction<boolean>>;
+  isHamburguerButtonActive: boolean;
+  setIsHamburguerButtonActive: Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultValue: IGlobalContextValues = {
   isTransparentHeader: false,
   setIsTransparentHeader: () => {},
+  isHamburguerButtonActive: false,
+  setIsHamburguerButtonActive: () => {},
 };
 
 export const GlobalContext = createContext<IGlobalContextValues>(defaultValue);
@@ -25,9 +29,16 @@ export default function GlobalContextProvider({
   children: ReactNode;
 }) {
   const [isTransparentHeader, setIsTransparentHeader] = useState(false);
+  const [isHamburguerButtonActive, setIsHamburguerButtonActive] =
+    useState(false);
   return (
     <GlobalContext.Provider
-      value={{ isTransparentHeader, setIsTransparentHeader }}
+      value={{
+        isTransparentHeader,
+        setIsTransparentHeader,
+        isHamburguerButtonActive,
+        setIsHamburguerButtonActive,
+      }}
     >
       {children}
     </GlobalContext.Provider>

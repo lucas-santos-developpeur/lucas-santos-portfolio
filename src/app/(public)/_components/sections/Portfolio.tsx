@@ -32,8 +32,8 @@ export const projects = [
 ];
 export default function PortfolioSection() {
   return (
-    <AnimateSection>
-      <section id="portfolio" className="py-20 bg-white dark:bg-slate-900">
+    <AnimateSection sectionId="portfolio">
+      <div className="flex justify-center items-center min-h-screen bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-50">
@@ -49,7 +49,7 @@ export default function PortfolioSection() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </AnimateSection>
   );
 }

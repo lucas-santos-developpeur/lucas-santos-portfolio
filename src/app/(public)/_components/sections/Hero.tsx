@@ -11,11 +11,8 @@ export const heroLinks = {
 
 const Hero: React.FC = () => {
   return (
-    <AnimateSection>
-      <section
-        id="hero"
-        className="flex justify-center items-center bg-blue-100 dark:bg-slate-900 min-h-screen"
-      >
+    <AnimateSection sectionId="hero">
+      <div className="flex justify-center items-center bg-blue-100 dark:bg-slate-900 min-h-screen">
         <div className="h-1/2 max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold text-gray-950 dark:text-gray-50 mb-6">
             Olá! sou o Lucas Santos
@@ -56,7 +53,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </AnimateSection>
   );
 };

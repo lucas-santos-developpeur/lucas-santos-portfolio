@@ -7,7 +7,6 @@ import { FcProcess } from "react-icons/fc";
 import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiJavascript, SiTypescript } from "react-icons/si";
 import { TbBrandMysql } from "react-icons/tb";
-import CertificationCard, { certifications } from "../cards/CertificationCards";
 import AnimateSection from "../animations/AnimateSection";
 
 const skills = [
@@ -27,8 +26,8 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <AnimateSection>
-      <section id="skills" className="section py-20">
+    <AnimateSection sectionId="skills">
+      <div className="section py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-800">Habilidades</h2>
@@ -39,7 +38,10 @@ const Skills: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {skills.map((skill) => (
-              <div key={skill.name} className="mb-2">
+              <div
+                key={skill.name}
+                className="mb-2 max-w-sm justify-self-center"
+              >
                 <h4 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
                   {skill.icon} {skill.name}
                 </h4>
@@ -52,19 +54,8 @@ const Skills: React.FC = () => {
               </div>
             ))}
           </div>
-
-          <div className="mt-12">
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-50">
-              Certificações e Cursos
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-4">
-              {certifications.map((cert) => (
-                <CertificationCard key={cert.name} certification={cert} />
-              ))}
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
     </AnimateSection>
   );
 };

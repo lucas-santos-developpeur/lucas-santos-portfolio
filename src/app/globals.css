@@ -77,6 +77,10 @@ html {
   }
 }
 
+.y-scroll-hidden {
+  @apply overflow-hidden;
+}
+
 .section {
   @apply container mx-auto;
 }

@@ -1,7 +1,7 @@
 "use client";
 // components/AnimateSection.tsx
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const variants = {
   hidden: { opacity: 0, y: 50 },
@@ -9,19 +9,28 @@ const variants = {
   exit: { opacity: 0, y: -50 },
 };
 
-const AnimateSection: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+type Props = {
+  children: React.ReactNode;
+  sectionId: string;
+};
+
+const AnimateSection = ({ children, sectionId }: Props) => {
+  const ref = useRef<HTMLElement>(null);
+  //
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1 1"],
+  });
+  //
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      variants={variants}
-      transition={{ duration: 0.5 }}
+    <motion.section
+      id={sectionId}
+      style={{ scale: scaleProgress, opacity: scrollYProgress }}
+      ref={ref}
     >
       {children}
-    </motion.div>
+    </motion.section>
   );
 };
 

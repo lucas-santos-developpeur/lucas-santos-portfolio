@@ -1,12 +1,26 @@
 "use client";
-import { useContext, useEffect } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import { GlobalContext } from "@/providers/GlobalContextProvider";
+import HamburguerButtonMenu from "../HamburguerButtonMenu";
+import Navigation from "./Navigation";
 
 const Header: React.FC = () => {
-  const { isTransparentHeader, setIsTransparentHeader } =
-    useContext(GlobalContext);
+  const {
+    isTransparentHeader,
+    setIsTransparentHeader,
+    isHamburguerButtonActive,
+  } = useContext(GlobalContext);
   // Função que seta o isTranparentHeader caso a tela tenha sido scrollada
-  const handlerPageScroll = () => {
+  const toggleScroll = useCallback(() => {
+    const body = document.querySelector("body");
+
+    isHamburguerButtonActive
+      ? body?.classList.toggle("y-scroll-hidden")
+      : body?.classList.toggle("y-scroll-hidden");
+  }, [isHamburguerButtonActive]);
+
+  useEffect(toggleScroll, [isHamburguerButtonActive]);
+  const handlerPageScroll = useCallback(() => {
     let scrollPosition = window.scrollY;
 
     if (scrollPosition >= 20) {
@@ -14,7 +28,7 @@ const Header: React.FC = () => {
     } else {
       setIsTransparentHeader(false);
     }
-  };
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", handlerPageScroll);
   }, [isTransparentHeader]);
@@ -29,32 +43,8 @@ const Header: React.FC = () => {
         <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">
           Logo
         </div>
-        <nav className="flex space-x-4">
-          <a
-            href="#hero"
-            className="text-gray-800 dark:text-gray-200 cursor-pointer"
-          >
-            Home
-          </a>
-          <a
-            href="#skills"
-            className="text-gray-800 dark:text-gray-200 cursor-pointer"
-          >
-            Skills
-          </a>
-          <a
-            href="#portfolio"
-            className="text-gray-800 dark:text-gray-200 cursor-pointer"
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-800 dark:text-gray-200 cursor-pointer"
-          >
-            Contact
-          </a>
-        </nav>
+        <Navigation />
+        <HamburguerButtonMenu />
       </div>
     </header>
   );
