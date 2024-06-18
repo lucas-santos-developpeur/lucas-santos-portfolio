@@ -7,7 +7,6 @@ import { FcProcess } from "react-icons/fc";
 import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiJavascript, SiTypescript } from "react-icons/si";
 import { TbBrandMysql } from "react-icons/tb";
-import AnimateSection from "../animations/AnimateSection";
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, level: 97 },
@@ -26,12 +25,14 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <AnimateSection sectionId="skills">
-      <div className="section py-20">
+    <section className="py-24 bg-gray-50 dark:bg-gray-950" id="skills">
+      <div className="section">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-gray-800">Habilidades</h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
+              Habilidades
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-100">
               Minhas habilidades técnicas e áreas de especialização.
             </p>
           </div>
@@ -42,7 +43,7 @@ const Skills: React.FC = () => {
                 key={skill.name}
                 className="mb-2 max-w-sm justify-self-center"
               >
-                <h4 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
+                <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
                   {skill.icon} {skill.name}
                 </h4>
                 <div className="w-80 bg-gray-200 rounded-full h-4 mt-2">
@@ -56,7 +57,7 @@ const Skills: React.FC = () => {
           </div>
         </div>
       </div>
-    </AnimateSection>
+    </section>
   );
 };
 

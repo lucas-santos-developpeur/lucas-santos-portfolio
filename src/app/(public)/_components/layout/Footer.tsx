@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             <FaLinkedin size={32} />
           </a>
           <a
-            href="https://www.instagram.com/your_username"
+            href="https://www.instagram.com/lucassantos.sh"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-50 hover:text-pink-500 transition-colors duration-300"

@@ -11,17 +11,17 @@ export const contacts = [
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/your_username",
+    url: "https://www.instagram.com/lucassantos.sh",
     icon: <FaInstagram />,
   },
   {
     name: "GitHub",
-    url: "https://github.com/your_username",
+    url: "https://github.com/lucas-santos-developpeur",
     icon: <FaGithub />,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/your_username",
+    url: "https://www.linkedin.com/in/lucas-santos-developer",
     icon: <FaLinkedin />,
   },
   // Adicione mais contatos conforme necessário
@@ -29,8 +29,8 @@ export const contacts = [
 
 const ContactSection: React.FC = () => {
   return (
-    <AnimateSection sectionId="contact">
-      <div className="py-20 bg-white dark:bg-slate-900">
+    <section id="contact">
+      <div className="py-24 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-50">
@@ -47,7 +47,7 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </AnimateSection>
+    </section>
   );
 };
 

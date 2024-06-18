@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./(public)/_components/layout/Header";
 import Footer from "./(public)/_components/layout/Footer";
 import GlobalContextProvider from "@/providers/GlobalContextProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,13 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <GlobalContextProvider>
         <body className={inter.className}>
-          <Header />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
 
-          {children}
-          <Footer />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </body>
       </GlobalContextProvider>
     </html>

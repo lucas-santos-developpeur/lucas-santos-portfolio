@@ -1,15 +1,15 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import AnimateSection from "../animations/AnimateSection";
-
+import { motion } from "framer-motion";
 export default function AboutSection() {
   return (
-    <AnimateSection sectionId="about">
-      <div className="section py-20 bg-gray-50">
+    <section id="about" className="pt-24 pb-24 bg-gray-200 dark:bg-gray-950">
+      <div className="section">
         <div className="mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-50">
-              Sobre Mim
+              sobre mim
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-200">
               Conheça um pouco mais sobre minha trajetória e habilidades.
@@ -58,6 +58,6 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-    </AnimateSection>
+    </section>
   );
 }

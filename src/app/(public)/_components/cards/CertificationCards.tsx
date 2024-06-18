@@ -56,9 +56,9 @@ export const certifications = [
 
 export default function CertificationCard({ certification }: Props) {
   return (
-    <div className="relative min-h-60 card bg-gray-50 p-4 rounded-lg shadow-md dark:bg-gray-800">
+    <div className="relative min-h-60 card bg-gray-200 p-4 rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-950 dark:bg-gray-800">
       <div className="flex items-center gap-2 mb-4">
-        <FaCertificate size={32} className="text-pink-500 mr-2" />
+        <FaCertificate size={32} className="text-blue-500 mr-2" />
         <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
           {certification.name}
         </h4>

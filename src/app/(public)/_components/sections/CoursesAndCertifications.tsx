@@ -6,10 +6,10 @@ type Props = {};
 
 export default function CoursesAndCertifications({}: Props) {
   return (
-    <AnimateSection sectionId="courses">
-      <div className="section py-20">
-        <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-50">
+    <section id="courses" className="py-24">
+      <div className="section">
+        <div className="">
+          <h3 className="text-center mb-8 text-4xl font-bold text-gray-800 dark:text-gray-100">
             Certificações e Cursos
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-4">
@@ -19,6 +19,6 @@ export default function CoursesAndCertifications({}: Props) {
           </div>
         </div>
       </div>
-    </AnimateSection>
+    </section>
   );
 }

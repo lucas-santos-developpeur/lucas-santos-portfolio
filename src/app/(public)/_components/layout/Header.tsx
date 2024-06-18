@@ -1,8 +1,9 @@
 "use client";
 import { useCallback, useContext, useEffect } from "react";
 import { GlobalContext } from "@/providers/GlobalContextProvider";
-import HamburguerButtonMenu from "../HamburguerButtonMenu";
+import HamburguerButtonMenu from "../buttons/HamburguerButtonMenu";
 import Navigation from "./Navigation";
+import { ToggleThemeButton } from "../buttons/ToggleThemeButton";
 
 const Header: React.FC = () => {
   const {
@@ -36,15 +37,16 @@ const Header: React.FC = () => {
   return (
     <header
       className={`${
-        !isTransparentHeader ? "bg-transparent" : "bg-blue-500"
-      } fixed top-0 w-full shadow z-50`}
+        !isTransparentHeader ? "bg-transparent" : "bg-gray-100 dark:bg-gray-950"
+      } fixed top-0 w-full z-50`}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+        <div className="text-2xl font-bold text-gray-950 dark:text-gray-50">
           Logo
         </div>
         <Navigation />
         <HamburguerButtonMenu />
+        <ToggleThemeButton />
       </div>
     </header>
   );

@@ -5,35 +5,41 @@ import Image from "next/image";
 
 export const heroLinks = {
   whatsapp: "https://wa.me/5591991149177",
-  github: "https://github.com/lucas-santos-developpeur  ",
+  github: "https://github.com/lucas-santos-developpeur",
   linkedin: "https://www.linkedin.com/in/lucas-santos-developer",
 };
 
 const Hero: React.FC = () => {
   return (
-    <AnimateSection sectionId="hero">
-      <div className="flex justify-center items-center bg-blue-100 dark:bg-slate-900 min-h-screen">
-        <div className="h-1/2 max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-gray-950 dark:text-gray-50 mb-6">
+    // <AnimateSection sectionId="hero">
+    <section
+      id="hero"
+      className="pt-24 lg:pt-0 bg-gradient-to-br from-slate-200 dark:from-slate-700 via-slate-300 dark:via-slate-800 to-slate-400 dark:to-slate-900"
+    >
+      <div className="container flex flex-col md:flex-row justify-between items-center min-h-screen">
+        <div className="md:max-w-xl">
+          <h1 className="text-5xl font-bold text-gray-950 dark:text-gray-50 mb-4">
             Olá! sou o Lucas Santos
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-200 mb-8">
-            Sou um desenvolvedor apaixonado por criar soluções inovadoras e
-            impactantes. <br />
-            Vamos construir algo incrível juntos?
+          <h2 className="font-semibold mb-8">Desenolvedor web</h2>
+          <p className="text-gray-800 dark:text-gray-200 mb-2">
+            Combinando criatividade e tecnologia, desenvolvo soluções digitais
+            que não só funcionam, mas também encantam os usuários e clientes.
           </p>
-          <p className="mb-4">Entre em contato e vamos conversar!</p>
+          <p className="text-gray-900 dark:text-gray-200 mb-6">
+            Entre em contato e vamos conversar!
+          </p>
           <div className="gap-4">
             <a
               href={heroLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit mx-auto flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-300"
+              className="w-fit mx-auto md:mx-0 flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 transition-colors duration-300"
             >
               <FaWhatsapp className="text-xl" />
               <span>Whatsapp</span>
             </a>
-            <div className="flex gap-4 justify-center mt-8">
+            <div className="flex gap-4 justify-center md:justify-start mt-8">
               <a
                 href={heroLinks.github}
                 target="_blank"
@@ -53,8 +59,18 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="bg-gradient-to-br from-sky-500 via-blue-700 to-transparent backdrop-blur-sm p-1 rounded-lg">
+          <Image
+            src="/about-image.jpg"
+            alt="Lucas Santos"
+            height={500}
+            width={500}
+            className="rounded-lg"
+          />
+        </div>
       </div>
-    </AnimateSection>
+      {/* </AnimateSection> */}
+    </section>
   );
 };
 
