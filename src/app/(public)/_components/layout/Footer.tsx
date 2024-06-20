@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { heroLinks } from "../sections/Hero";
+import { LucasSantosLinks } from "@/utils/constants/global-constants";
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         </h2>
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href={heroLinks.whatsapp}
+            href={LucasSantosLinks.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-50 hover:text-green-500 transition-colors duration-300"
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             <FaWhatsapp size={32} />
           </a>
           <a
-            href={heroLinks.github}
+            href={LucasSantosLinks.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-50 hover:text-gray-600 transition-colors duration-300"
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             <FaGithub size={32} />
           </a>
           <a
-            href={heroLinks.linkedin}
+            href={LucasSantosLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-50 hover:text-blue-600 transition-colors duration-300"
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             <FaLinkedin size={32} />
           </a>
           <a
-            href="https://www.instagram.com/lucassantos.sh"
+            href={LucasSantosLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-50 hover:text-pink-500 transition-colors duration-300"

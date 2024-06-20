@@ -1,17 +1,10 @@
 import React from "react";
 import { FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
-import AnimateSection from "../animations/AnimateSection";
 import Image from "next/image";
-
-export const heroLinks = {
-  whatsapp: "https://wa.me/5591991149177",
-  github: "https://github.com/lucas-santos-developpeur",
-  linkedin: "https://www.linkedin.com/in/lucas-santos-developer",
-};
+import { LucasSantosLinks } from "@/utils/constants/global-constants";
 
 const Hero: React.FC = () => {
   return (
-    // <AnimateSection sectionId="hero">
     <section
       id="hero"
       className="pt-24 lg:pt-0 bg-gradient-to-br from-slate-200 dark:from-slate-700 via-slate-300 dark:via-slate-800 to-slate-400 dark:to-slate-900"
@@ -21,7 +14,7 @@ const Hero: React.FC = () => {
           <h1 className="text-5xl font-bold text-gray-950 dark:text-gray-50 mb-4">
             Olá! sou o Lucas Santos
           </h1>
-          <h2 className="font-semibold mb-8">Desenolvedor web</h2>
+          <h2 className="font-semibold mb-8">Desenvolvedor web</h2>
           <p className="text-gray-800 dark:text-gray-200 mb-2">
             Combinando criatividade e tecnologia, desenvolvo soluções digitais
             que não só funcionam, mas também encantam os usuários e clientes.
@@ -31,7 +24,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="gap-4">
             <a
-              href={heroLinks.whatsapp}
+              href={LucasSantosLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="w-fit mx-auto md:mx-0 flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 transition-colors duration-300"
@@ -41,7 +34,7 @@ const Hero: React.FC = () => {
             </a>
             <div className="flex gap-4 justify-center md:justify-start mt-8">
               <a
-                href={heroLinks.github}
+                href={LucasSantosLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-fit rounded-full"
@@ -49,7 +42,7 @@ const Hero: React.FC = () => {
                 <FaGithub size={32} />
               </a>
               <a
-                href={heroLinks.linkedin}
+                href={LucasSantosLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-fit transition-colors duration-300"
@@ -69,7 +62,6 @@ const Hero: React.FC = () => {
           />
         </div>
       </div>
-      {/* </AnimateSection> */}
     </section>
   );
 };

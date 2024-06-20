@@ -1,6 +1,6 @@
 import React from "react";
-import AnimateSection from "../animations/AnimateSection";
-import CertificationCard, { certifications } from "../cards/CertificationCards";
+import CertificationCard from "../cards/CertificationCards";
+import { certifications } from "@/utils/constants/global-constants";
 
 type Props = {};
 

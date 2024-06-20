@@ -1,7 +1,6 @@
 import React from "react";
 import ContactLinks from "../navigations/ContactLinks";
 import { FaWhatsapp, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
-import AnimateSection from "../animations/AnimateSection";
 
 export const contacts = [
   {

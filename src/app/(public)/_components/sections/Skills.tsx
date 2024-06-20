@@ -1,27 +1,6 @@
 "use client";
 import React from "react";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { DiMongodb } from "react-icons/di";
-import { FaCss3, FaHtml5, FaNodeJs } from "react-icons/fa";
-import { FcProcess } from "react-icons/fc";
-import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiJavascript, SiTypescript } from "react-icons/si";
-import { TbBrandMysql } from "react-icons/tb";
-
-const skills = [
-  { name: "HTML", icon: <FaHtml5 />, level: 97 },
-  { name: "CSS", icon: <FaCss3 />, level: 97 },
-  { name: "JavaScript", icon: <SiJavascript />, level: 90 },
-  { name: "Tailwind css", icon: <RiTailwindCssFill />, level: 65 },
-  { name: "TypeScript", icon: <SiTypescript />, level: 90 },
-  { name: "Metodologias Ágeis", icon: <FcProcess />, level: 80 },
-  { name: "ReactJS", icon: <RiReactjsFill />, level: 85 },
-  { name: "NextJS", icon: <RiNextjsFill />, level: 90 },
-  { name: "NodeJS", icon: <FaNodeJs />, level: 80 },
-  { name: "PostgreSQL", icon: <BiLogoPostgresql />, level: 80 },
-  { name: "MySQL", icon: <TbBrandMysql />, level: 75 },
-  { name: "MongoDB", icon: <DiMongodb />, level: 75 },
-];
+import { SkillsLevel } from "@/utils/constants/global-constants";
 
 const Skills: React.FC = () => {
   return (
@@ -38,7 +17,7 @@ const Skills: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {skills.map((skill) => (
+            {SkillsLevel.map((skill) => (
               <div
                 key={skill.name}
                 className="mb-2 max-w-sm justify-self-center"

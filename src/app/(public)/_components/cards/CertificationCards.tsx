@@ -11,48 +11,11 @@ import {
 } from "@/components/ui/dialog";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
+import { CertificationType } from "@/utils/constants/global-constants";
 
 type Props = {
-  certification: any;
+  certification: CertificationType;
 };
-
-export const certifications = [
-  {
-    name: "Desenvolvimento web completo 2021",
-    date: "2021",
-    description:
-      "Curso completo abordando HTML, CSS e JavaScript, com vários projetos práticos.",
-    imageUrl: "/images/certificados/dev-web.jpg",
-  },
-  {
-    name: "Curso de TypeScript com projetos",
-    date: "2023",
-    description:
-      "Aprendizado de TypeScript com foco em projetos práticos e avançados.",
-    imageUrl: "/images/certificados/typescript.jpg",
-  },
-  {
-    name: "Análise e levantamento de requisitos",
-    date: "2023",
-    description:
-      "Curso focado na análise e levantamento de requisitos para desenvolvimento de software.",
-    imageUrl: "/images/certificados/requisitos.jpg",
-  },
-  {
-    name: "Curso de marketing digital",
-    date: "2023",
-    description:
-      "Curso abrangente de marketing digital, incluindo SEO, SEM e mídias sociais.",
-    imageUrl: "/images/certificados/marketing-digital.jpg",
-  },
-  {
-    name: "Figma design de interfaces",
-    date: "2023",
-    description:
-      "Curso de design de interfaces utilizando Figma, do básico ao avançado.",
-    imageUrl: "/images/certificados/figma.jpg",
-  },
-];
 
 export default function CertificationCard({ certification }: Props) {
   return (
